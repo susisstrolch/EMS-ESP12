@@ -296,7 +296,6 @@ patch interface, ceramic antenna, small size.</description>
 <wire x1="23" y1="14" x2="23" y2="2" width="0.127" layer="21"/>
 <wire x1="23" y1="2" x2="6" y2="2" width="0.127" layer="21"/>
 <wire x1="6" y1="2" x2="6" y2="14" width="0.127" layer="21"/>
-<text x="17" y="9" size="1.27" layer="21" rot="R180">ESP-12</text>
 <wire x1="4.5" y1="14.5" x2="5.5" y2="14.5" width="0.127" layer="21"/>
 <wire x1="5.5" y1="14.5" x2="5.5" y2="12.5" width="0.127" layer="21"/>
 <wire x1="5.5" y1="12.5" x2="4.5" y2="12.5" width="0.127" layer="21"/>
@@ -329,14 +328,14 @@ patch interface, ceramic antenna, small size.</description>
 <vertex x="16.6" y="17.635"/>
 <vertex x="16.6" y="14.35"/>
 </polygon>
-<pad name="GPIO5" x="14" y="15" drill="0.8" shape="square"/>
+<pad name="GPIO4" x="14" y="15" drill="0.8" shape="square"/>
 <polygon width="0.127" layer="1">
 <vertex x="13.4" y="14.35"/>
 <vertex x="13.4" y="17.635"/>
 <vertex x="14.6" y="17.635"/>
 <vertex x="14.6" y="14.35"/>
 </polygon>
-<pad name="GPIO4" x="12" y="15" drill="0.8" shape="square"/>
+<pad name="GPIO5" x="12" y="15" drill="0.8" shape="square"/>
 <polygon width="0.127" layer="1">
 <vertex x="11.4" y="14.35"/>
 <vertex x="11.4" y="17.635"/>
@@ -413,6 +412,22 @@ patch interface, ceramic antenna, small size.</description>
 <vertex x="21.4" y="-1.635"/>
 <vertex x="21.4" y="1.65"/>
 </polygon>
+<text x="8" y="11" size="0.8128" layer="21" rot="R90">TxD</text>
+<text x="10" y="11" size="0.8128" layer="21" rot="R90">RxD</text>
+<text x="12" y="10" size="0.8128" layer="21" rot="R90">GPIO5</text>
+<text x="14" y="10" size="0.8128" layer="21" rot="R90">GPIO4</text>
+<text x="16" y="10" size="0.8128" layer="21" rot="R90">GPIO0</text>
+<text x="18" y="10" size="0.8128" layer="21" rot="R90">GPIO2</text>
+<text x="20" y="10" size="0.8128" layer="21" rot="R90">GPIO15</text>
+<text x="22" y="11" size="0.8128" layer="21" rot="R90">GND</text>
+<text x="7" y="5" size="0.8128" layer="21" rot="R270">REST</text>
+<text x="9" y="5" size="0.8128" layer="21" rot="R270">ADC</text>
+<text x="11" y="6" size="0.8128" layer="21" rot="R270">CH_PD</text>
+<text x="13" y="6" size="0.8128" layer="21" rot="R270">GPIO16</text>
+<text x="15" y="6" size="0.8128" layer="21" rot="R270">GPIO14</text>
+<text x="17" y="6" size="0.8128" layer="21" rot="R270">GPIO12</text>
+<text x="19" y="6" size="0.8128" layer="21" rot="R270">GPIO13</text>
+<text x="21" y="5" size="0.8128" layer="21" rot="R270">Vcc</text>
 </package>
 </packages>
 <symbols>
@@ -441,7 +456,7 @@ patch interface, ceramic antenna, small size.</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="ESP-12">
+<deviceset name="ESP-12" prefix="ESP">
 <description>low cost Wifi to Serial Module</description>
 <gates>
 <gate name="G$1" symbol="ESP8266" x="0" y="0"/>
@@ -459,8 +474,8 @@ patch interface, ceramic antenna, small size.</description>
 <connect gate="G$1" pin="GPIO15" pad="GPIO15"/>
 <connect gate="G$1" pin="GPIO16" pad="GPIO16"/>
 <connect gate="G$1" pin="GPIO2" pad="GPIO2"/>
-<connect gate="G$1" pin="GPIO4" pad="GPIO4"/>
-<connect gate="G$1" pin="GPIO5" pad="GPIO5"/>
+<connect gate="G$1" pin="GPIO4" pad="GPIO5"/>
+<connect gate="G$1" pin="GPIO5" pad="GPIO4"/>
 <connect gate="G$1" pin="REST" pad="REST"/>
 <connect gate="G$1" pin="RXD" pad="RXD"/>
 <connect gate="G$1" pin="TXD" pad="TXD"/>

@@ -364,18 +364,12 @@ UsedLibrary="/home/jorschiedt/eagle/libraries/WE/Wuerth_Elektronik_LEDs_V6.lbr"
 UsedLibrary="/home/jorschiedt/eagle/libraries/WE/Wurth_Electronics_Midcom_Speedy_and_standard_magnetics.lbr"
 
 [Win_1]
-Type="Control Panel"
-Loc="0 0 759 664"
-State=0
-Number=0
-
-[Win_2]
 Type="Schematic Editor"
-Loc="1169 21 2728 1368"
+Loc="203 103 2067 1486"
 State=2
 Number=1
 File="EMS-ESP8266-12.sch"
-View="-197.349 14.5472 7.73017 191.866"
+View="-184.797 8.59576 59.4966 191.198"
 WireWidths=" 0 0.3048 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.4064 0.1524"
 PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
 PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
@@ -391,7 +385,7 @@ DimensionExtWidths=" 0.127 0.254 0.1 0.13 0.26 0"
 DimensionExtLengths=" 1.27 2.54 1 2 3 0"
 DimensionExtOffsets=" 1.27 2.54 1 2 3 0"
 SmdSizes=" 0.3048 0.1524 0.4064 0.2032 0.6096 0.3048 0.8128 0.4064 1.016 0.508 1.27 0.6604 1.4224 0.7112 1.6764 0.8128 1.778 0.9144 1.9304 0.9652 2.1844 1.0668 2.54 1.27 3.81 1.9304 5.08 2.54 6.4516 3.2512 1.27 0.635"
-WireBend=4
+WireBend=2
 WireBendSet=31
 WireCap=1
 MiterStyle=0
@@ -414,21 +408,21 @@ ArcDirection=0
 AddLevel=2
 PadsSameType=0
 Layer=91
-Views=" 1: -197.349 14.5472 7.73017 191.866"
+Views=" 1: -184.797 8.59576 59.4966 191.198"
 Sheet="1"
 
-[Win_3]
+[Win_2]
 Type="Board Editor"
-Loc="303 72 1893 1127"
+Loc="509 10 2625 1436"
 State=2
 Number=2
 File="EMS-ESP8266-12.brd"
-View="-3.62975 -2.79635 87.8655 52.134"
-WireWidths=" 0 0.254 0.3048 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.4064"
+View="-8.15269 -9.68757 89.7029 57.6299"
+WireWidths=" 0 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.4064 0.254 0.508"
 PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
 PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
 ViaDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
-ViaDrills=" 0.5 0.7 0.8 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.6"
+ViaDrills=" 0.7 0.8 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.6 0.3048"
 HoleDrills=" 0.5 0.7 0.8 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.6"
 TextSizes=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.9304 2.1844 2.54 3.81 5.08 6.4516 1.778"
 PolygonSpacings=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 5.08 6.4516 1.27"
@@ -439,12 +433,12 @@ DimensionExtWidths=" 0.127 0.254 0.1 0.13 0.26 0"
 DimensionExtLengths=" 1.27 2.54 1 2 3 0"
 DimensionExtOffsets=" 1.27 2.54 1 2 3 0"
 SmdSizes=" 0.3048 0.1524 0.4064 0.2032 0.6096 0.3048 0.8128 0.4064 1.016 0.508 1.27 0.6604 1.4224 0.7112 1.6764 0.8128 1.778 0.9144 1.9304 0.9652 2.1844 1.0668 2.54 1.27 3.81 1.9304 5.08 2.54 6.4516 3.2512 1.27 0.635"
-WireBend=0
+WireBend=3
 WireBendSet=0
 WireCap=1
 MiterStyle=0
 PadShape=0
-ViaShape=0
+ViaShape=2
 PolygonPour=0
 PolygonRank=1
 PolygonThermals=1
@@ -461,7 +455,13 @@ SwapLevel=0
 ArcDirection=0
 AddLevel=2
 PadsSameType=0
-Layer=16
+Layer=1
+
+[Win_3]
+Type="Control Panel"
+Loc="0 0 759 664"
+State=2
+Number=0
 
 [Desktop]
 Screen="2880 1620"
