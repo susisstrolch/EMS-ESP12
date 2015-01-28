@@ -17947,14 +17947,17 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.254" drill="0">
+<class number="0" name="default" width="0.254" drill="0.2">
 <clearance class="0" value="0.254"/>
 </class>
-<class number="1" name="pwr" width="0.508" drill="0">
+<class number="1" name="pwr" width="0.508" drill="0.2">
+<clearance class="0" value="0.205"/>
 <clearance class="1" value="0.254"/>
 </class>
-<class number="2" name="signal" width="0.254" drill="0">
-<clearance class="2" value="0.1905"/>
+<class number="2" name="signal" width="0.254" drill="0.2">
+<clearance class="0" value="0.205"/>
+<clearance class="1" value="0.205"/>
+<clearance class="2" value="0.205"/>
 </class>
 </classes>
 <parts>
@@ -18773,11 +18776,15 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 </sheet>
 </sheets>
 <errors>
-<approved hash="104,1,7.62,162.56,IC1P,V+,+3V3,,,"/>
-<approved hash="104,1,7.62,147.32,IC1P,V-,GND,,,"/>
-<approved hash="104,1,-104.14,109.22,U$1,VOUT,+3V3,,,"/>
-<approved hash="202,1,-132.08,99.06,U$1,/SHDN,,,,"/>
-<approved hash="104,1,-132.08,109.22,U$1,VIN,UBUCK,,,"/>
+<approved hash="102,1,-86.36,17.78,GND,GPIO15,,,,"/>
+<approved hash="201,1,-86.36,17.78,GND,GND\, GPIO15,,,,"/>
+<approved hash="104,1,-25.4,165.1,IC1P,V+,+3V3,,,"/>
+<approved hash="104,1,-25.4,149.86,IC1P,V-,GND,,,"/>
+<approved hash="104,1,-104.14,109.22,MOD1,VOUT,+3V3,,,"/>
+<approved hash="202,1,-132.08,99.06,MOD1,/SHDN,,,,"/>
+<approved hash="104,1,-132.08,109.22,MOD1,VIN,UBUCK,,,"/>
+<approved hash="113,1,19.2447,38.1,MODE,,,,,"/>
+<approved hash="115,1,-154.94,45.72,CH_PD,,,,,"/>
 </errors>
 </schematic>
 </drawing>
