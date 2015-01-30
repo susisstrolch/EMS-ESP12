@@ -162,6 +162,7 @@ static void ICACHE_FLASH_ATTR recvTask(os_event_t *events)
 void user_init(void)
 {
 		ETS_UART_INTR_DISABLE();
+		
 		UART_SetBaudrate(UART0, BIT_RATE_9600);
 		UART_ResetFifo(UART0);
 

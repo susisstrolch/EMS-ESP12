@@ -1,4 +1,4 @@
-# EMS-ESP12
+# EMS-ESP8266/12
 EMS Gateway with ESP8266/ESP-12 module
 
 Wireless "Buderus EMS-Bus" interface for "collectord".
