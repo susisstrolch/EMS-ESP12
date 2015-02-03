@@ -27,6 +27,18 @@
 #define UART0   0
 #define UART1   1
 
+//calc bit 0..5 for  UART_CONF0 register
+#define CALC_UARTMODE(data_bits,parity,stop_bits) \
+        (((parity == NONE_BITS) ? 0x0 : (UART_PARITY_EN | (parity & UART_PARITY))) | \
+        ((stop_bits & UART_STOP_BIT_NUM) << UART_STOP_BIT_NUM_S) | \
+        ((data_bits & UART_BIT_NUM) << UART_BIT_NUM_S))
+//get data_bits from UART_CONF0 register
+#define GETUART_DATABITS(uartmode) ((uartmode >> UART_BIT_NUM_S) & UART_BIT_NUM)
+//get stop_bits from UART_CONF0 register
+#define GETUART_STOPBITS(uartmode) ((uartmode >> UART_STOP_BIT_NUM_S) & UART_STOP_BIT_NUM)
+//get parity from UART_CONF0 register
+#define GETUART_PARITYMODE(uartmode) ((uartmode & UART_PARITY_EN) ? uartmode & UART_PARITY : NONE_BITS)
+
 typedef enum {
     FIVE_BITS = 0x0,
     SIX_BITS = 0x1,

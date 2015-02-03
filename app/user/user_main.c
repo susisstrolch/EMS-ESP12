@@ -15,6 +15,8 @@
  * You should have received a copy of the GNU General Public License along
  * with this program.	If not, see <http://www.gnu.org/licenses/>.
  */
+
+#define __USER_MAIN_C
 #include "ets_sys.h"
 #include "os_type.h"
 #include "osapi.h"
@@ -28,6 +30,10 @@
 #include "config.h"
 #include "flash_param.h"
 
+#include "ems.h"
+
+extern void ems_init();
+
 RcvMsgBuff *emsRxBuf;
 flash_param_t *flash_param;
 
@@ -35,7 +41,6 @@ os_event_t		recvTaskQueue[recvTaskQueueLen];
 extern serverConnData connData[MAX_CONN];
 
 uint32 rtc_clock_calibration;
-
 
 /* ********************************
  * allocate a RcvMsgBuff structure
@@ -45,11 +50,12 @@ RcvMsgBuff *allocateRcvMsgBuff() {
 	RcvMsgBuff *msgBuf = (RcvMsgBuff *) os_zalloc(sizeof(RcvMsgBuff));
 
 	msgBuf->BuffState = EMPTY;
-	msgBuf->RcvBuffSize = flash_param->ems_bufsize;
-	msgBuf->pRcvMsgBuff = (uint8 *) os_zalloc(flash_param->ems_bufsize);
+	msgBuf->RcvBuffSize = RX_BUFF_SIZE;
+	msgBuf->pRcvMsgBuff = (uint8 *) os_zalloc(RX_BUFF_SIZE);
 	msgBuf->pReadPos = msgBuf->pWritePos = msgBuf->pRcvMsgBuff;
 	return msgBuf;
 }
+
 /*********************************************************
  * recvTask: got BRK terminated data sequence
  *
@@ -87,10 +93,10 @@ static void ICACHE_FLASH_ATTR recvTask(os_event_t *events)
 		if ( pReadPos[0] == (uint8_t)0x1a &&
 			 pReadPos[1] == (uint8_t)0xe5 ) {
 
-			EMS_DebugHeader emsDbgHdr;
+			_EMS_DebugHeader emsDbgHdr;
 			
-			os_memcpy(&emsDbgHdr, pReadPos, sizeof(EMS_DebugHeader));
-			if (flash_param->ems_debug) {
+			os_memcpy(&emsDbgHdr, pReadPos, sizeof(_EMS_DebugHeader));
+			if (1) {
 				static  uint32_t laststamp = 0;				// last pckg receive time
 
 				uint32_t rxDelta = emsDbgHdr.rtc_time - laststamp;			// Telegram Delta in uS
@@ -102,7 +108,7 @@ static void ICACHE_FLASH_ATTR recvTask(os_event_t *events)
 									emsDbgHdr.uart_int_st,
 									emsDbgHdr.uart_fifo_len & 0xff);
 			}
-			pReadPos += sizeof(EMS_DebugHeader);
+			pReadPos += sizeof(_EMS_DebugHeader);
 		}
 
 		ems_raw_buffer[ems_raw_size++] = byte = *(pReadPos++);
@@ -117,14 +123,14 @@ static void ICACHE_FLASH_ATTR recvTask(os_event_t *events)
 		crc |= d;
 		crc = crc ^ byte;
 
-		if (flash_param->ems_debug)
+		if (1)
 			pMsg += os_sprintf(pMsg, "%02x ", byte);		// debug msg
 	}
 
 	// prepend checksum to recv buffer, overwrites brk char
 	pWritePos[-1] = crc;
 
-	if (flash_param->ems_debug) {
+	if (1) {
 		if (ems_raw_size > 2) {
 			pMsg += os_sprintf(pMsg, "? %02x", *(pReadPos++));	// emit EMS CRC
 			pMsg += os_sprintf(pMsg, ":%02x", *(pReadPos++));	// CRC
@@ -134,12 +140,12 @@ static void ICACHE_FLASH_ATTR recvTask(os_event_t *events)
 
 	ems_gw_buffer_size = pMsg - msg;
 
-	if (flash_param->ems_enable) {		 // send rxBuf over the wire...
+	if (1) {		 // send rxBuf over the wire...
 		int cnt;
 		for (cnt = 0; cnt < MAX_CONN; ++cnt) {
 			if (connData[cnt].conn) {
 				if (ems_raw_size > 2) {
-					if (flash_param->ems_debug)
+					if (1)
 						os_printf("#%d ", cnt);
 					espconn_sent(connData[cnt].conn, ems_gw_buffer, ems_gw_buffer_size);
 				} else {
@@ -153,7 +159,7 @@ static void ICACHE_FLASH_ATTR recvTask(os_event_t *events)
 		}
 	}
 
-	if (flash_param->ems_debug)
+	if (1)
 		os_printf(msg);
 	os_free(msg);
 	os_free(pRcvMsgBuff);	// free RX FIFO Buffer
@@ -161,29 +167,25 @@ static void ICACHE_FLASH_ATTR recvTask(os_event_t *events)
 
 void user_init(void)
 {
-		ETS_UART_INTR_DISABLE();
-		
 		UART_SetBaudrate(UART0, BIT_RATE_9600);
 		UART_ResetFifo(UART0);
 
 		UART_SetBaudrate(UART1, BIT_RATE_115200);
 		UART_ResetFifo(UART1);
 
-		flash_param_init();
-		flash_param = flash_param_get();
-
-		emsRxBuf = allocateRcvMsgBuff();
-		uart_init(BIT_RATE_9600, BIT_RATE_115200);
-
 		rtc_clock_calibration = system_rtc_clock_cali_proc();			// get RTC clock period
 		os_printf("rtc_clock_calibration: %0x\n", rtc_clock_calibration >>12 );
 		os_printf("system_get_rtc_time:   %d\n", system_get_rtc_time());
 		os_printf("system_get_time:       %d\n", system_get_time());
 
-		serverInit(flash_param->port);
+		flash_param_init();
+		flash_param = flash_param_get();
 
 		wifi_set_sleep_type(LIGHT_SLEEP_T);
-		system_os_task(recvTask, recvTaskPrio, recvTaskQueue, recvTaskQueueLen);
-
-		ETS_UART_INTR_ENABLE();
+		
+		emsRxBuf = allocateRcvMsgBuff();
+		uart_init(BIT_RATE_9600, BIT_RATE_115200);
+		
+//		ems_init();
+		serverInit(flash_param->port);
 }

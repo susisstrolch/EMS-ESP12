@@ -15,6 +15,8 @@
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+#define __UART_C
 #include "ets_sys.h"
 #include "osapi.h"
 #include "driver/uart.h"
@@ -202,59 +204,35 @@ uart0_sendStr(const char *str)
 LOCAL void
 uart0_rx_intr_handler(void *para)
 {
-    // extern flash_param_t flash_param;
-    RcvMsgBuff *rcvMsgBuff = (RcvMsgBuff *)para;
-    uint32 uart_intr_status = READ_PERI_REG(UART_INT_ST(UART0));
-
-    // fill RcvMsgBuff with additional debug information
-    // if (flash_param->ems_debug) {
-        extern uint32 rtc_clock_calibration;        // us per RTC tick
-        EMS_DebugHeader emsDbgHdr;
-
-        emsDbgHdr.tag = (uint16_t) 0xe51a;
-        emsDbgHdr.rtc_time = system_get_time();
-        emsDbgHdr.uart_int_st = uart_intr_status & 0xFFFF;
-        emsDbgHdr.uart_fifo_len	= READ_PERI_REG(UART_STATUS(UART0)) >> UART_RXFIFO_CNT_S;
-
-        os_memcpy(rcvMsgBuff->pWritePos, &emsDbgHdr, sizeof(EMS_DebugHeader));
-        rcvMsgBuff->pWritePos += sizeof(EMS_DebugHeader);
-    // }
-
-    // clear INT reason, read FIFO if necessary
-    do {
-        if (UART_FRM_ERR_INT_ST == (uart_intr_status & UART_FRM_ERR_INT_ST)) {
-            // emsBuffer.status.rxfrm = 1;
+	register uint16_t uart_intr_status;
+	register EMS_UART_INT_STATUS *ems_uart_int_status = os_alloc(sizeof(EMS_UART_INT_STATUS));
+	
+	ems_uart_int_status->millis = EMS_Millis;
+	ems_uart_int_status->fifolen= (READ_PERI_REG(UART_STATUS(UART0)) >> UART_RXFIFO_CNT_S) & UART_RXFIFO_CNT;
+		
+    // clear INT reason, start rx_task
+    while ((uart_intr_status = READ_PERI_REG(UART_INT_ST(UART0))) != 0x00); {
+        if (uart_intr_status & UART_FRM_ERR_INT_ST) {
             WRITE_PERI_REG(UART_INT_CLR(UART0), UART_FRM_ERR_INT_CLR);		        // clear FRM_ERR
-
-        } else if (UART_RXFIFO_FULL_INT_ST == (uart_intr_status & UART_RXFIFO_FULL_INT_ST)) {
-             // emsBuffer.status.rxfull = 1;
+ 			system_os_post(emsRxTaskPrio, UART_FRM_ERR_INT_ST , (uint32)ems_uart_int_status );
+        } else if (uart_intr_status & UART_RXFIFO_FULL_INT_ST) {
        		WRITE_PERI_REG(UART_INT_CLR(UART0), UART_RXFIFO_FULL_INT_CLR);	        // clear RXFIFO_FULL
-
-        } else if (UART_RXFIFO_OVF_INT_ST == (uart_intr_status & UART_RXFIFO_OVF_INT_ST)) {
-            // emsBuffer.status.rxovf = 1;
+ 			system_os_post(emsRxTaskPrio,  UART_RXFIFO_FULL_INT_ST, (uint32)ems_uart_int_status );
+        } else if (uart_intr_status & UART_RXFIFO_OVF_INT_ST) 
 			WRITE_PERI_REG(UART_INT_CLR(UART0), UART_RXFIFO_OVF_INT_CLR);	        // clear Rx Overflow
-
-        }  else if (UART_BRK_DET_INT_ST == (uart_intr_status & UART_BRK_DET_INT_ST)) {
-            // emsBuffer.status.rxbrk = 1;
-           do {
-                *(rcvMsgBuff->pWritePos++) = READ_PERI_REG(UART_FIFO(UART0)) & 0xFF;
-            } while ((READ_PERI_REG(UART_STATUS(UART0)) >> UART_RXFIFO_CNT_S) & UART_RXFIFO_CNT);
-
-			WRITE_PERI_REG(UART_INT_CLR(UART0), UART_BRK_DET_INT_ST);	            // clear BRK_DET
-            CLEAR_PERI_REG_MASK(UART_CONF0(UART0), UART_LOOPBACK);                  //disable uart loopback
-            CLEAR_PERI_REG_MASK(UART_CONF0(UART0), UART_TXD_BRK);                   //CLEAR BRK BIT
-
-            uart_rx_intr_disable(UART0);
-			system_os_post(recvTaskPrio, 0, (uint32)rcvMsgBuff );                   // recvTask is responsible to reenable INT
-
+ 			system_os_post(emsRxTaskPrio, UART_RXFIFO_OVF_INT_ST , (uint32)ems_uart_int_status );
+        }  else if (uart_intr_status & UART_BRK_DET_INT_ST) {
+			WRITE_PERI_REG(UART_INT_CLR(UART0), UART_BRK_DET_INT_CLR);	            // clear BRK_DET
+            SET_PERI_REG_MASK(UART_CONF0(uart_no), UART_TXFIFO_RST);				// reset Tx FIFO
+			CLEAR_PERI_REG_MASK(UART_CONF0(uart_no), UART_TXFIFO_RST|UART_TXD_BRK );
+ 			system_os_post(emsRxTaskPrio, UART_BRK_DET_INT_ST , (uint32)ems_uart_int_status );
         } else if (UART_TXFIFO_EMPTY_INT_ST == (uart_intr_status & UART_TXFIFO_EMPTY_INT_ST)) {
             WRITE_PERI_REG(UART_INT_CLR(UART0), UART_TXFIFO_EMPTY_INT_CLR);
             CLEAR_PERI_REG_MASK(UART_INT_ENA(UART0), UART_TXFIFO_EMPTY_INT_ENA);
-
         } else {
-            //skip
+            // Clear all INTR?
         }
-    } while ((uart_intr_status = READ_PERI_REG(UART_INT_ST(UART0))) != 0x00);
+    } 
 }
 
 void ICACHE_FLASH_ATTR

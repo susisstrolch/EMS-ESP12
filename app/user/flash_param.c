@@ -2,11 +2,8 @@
 #include "spi_flash.h"
 #include "ets_sys.h"
 #include "c_types.h"
-#include "flash_param.h"
-#include "user_config.h"
 #include "driver/uart.h"
-#include "driver/uart_register.h"
-#include "osapi.h"
+#include "flash_param.h"
 
 #define FLASH_PARAM_START_SECTOR 0x3C
 #define FLASH_PARAM_SECTOR (FLASH_PARAM_START_SECTOR + 0)
@@ -44,27 +41,13 @@ int ICACHE_FLASH_ATTR flash_param_set(void) {
 	return 1;
 }
 
-void ICACHE_FLASH_ATTR flash_param_init_defaults(void) {
+void ICACHE_FLASH_ATTR flash_param_init_defaults(void) {	
 	flash_param_t *flash_param = flash_param_get();
 	flash_param->magic = FLASH_PARAM_MAGIC;
 	flash_param->version = FLASH_PARAM_VERSION;
 	flash_param->baud = 115200;
 	flash_param->port = 23;
-
-	// advanced parameters for EMS gateway
-	flash_param->ems_bufsize = EMS_RXBUF_SIZE;
-	flash_param->ems_intmask = EMS_UART_INT_MASK;
-	flash_param->ems_debug = 1;					// default: 1: enable debug output via UART1
-	flash_param->ems_ro = 1; 					// default: 1: don't send to EMS
-	flash_param->ems_enable = 1; 				// default: 1: send over the wire
-
-	// EMS Gateway parameters
-	os_strcpy(flash_param->ems_host, "192.168.254.20", 64);		// Diskstation
-	flash_param->ems_port = 10456;
-
-	os_strcpy(flash_param->ntp_srv, "192.168.254.1", 64);		// fritz.box
-
-	// store settings
+	flash_param->uartconf0 = CALC_UARTMODE(EIGHT_BITS, NONE_BITS, ONE_STOP_BIT);
 	flash_param_set();
 }
 
