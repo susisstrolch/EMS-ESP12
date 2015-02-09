@@ -8,20 +8,20 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -30,8 +30,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -39,15 +39,15 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -18071,55 +18071,85 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 </classes>
 <parts>
 <part name="D1" library="diode" deviceset="SCHOTTKY-DIODE" device="DO35-7" value="BAT46">
-<attribute name="CONRAD" value="153087-62"/>
+<attribute name="REICHELT" value="BAT 46"/>
 </part>
 <part name="D2" library="diode" deviceset="SCHOTTKY-DIODE" device="DO35-7" value="BAT46">
-<attribute name="CONRAD" value="153087-62"/>
+<attribute name="REICHELT" value="BAT 46"/>
 </part>
 <part name="D3" library="diode" deviceset="SCHOTTKY-DIODE" device="DO35-7" value="BAT46">
-<attribute name="CONRAD" value="153087-62"/>
+<attribute name="REICHELT" value="BAT 46"/>
 </part>
 <part name="D4" library="diode" deviceset="SCHOTTKY-DIODE" device="DO35-7" value="BAT46">
-<attribute name="CONRAD" value="153087-62"/>
+<attribute name="REICHELT" value="BAT 46"/>
 </part>
 <part name="D5" library="diode" deviceset="SCHOTTKY-DIODE" device="DO35-7" value="BAT46">
-<attribute name="CONRAD" value="153087-62"/>
+<attribute name="REICHELT" value="BAT 46"/>
 </part>
 <part name="D6" library="diode" deviceset="SCHOTTKY-DIODE" device="DO35-7" value="1N4148">
-<attribute name="CONRAD" value="162280-62"/>
+<attribute name="REICHELT" value="1N 4148"/>
 </part>
 <part name="L1" library="inductors" deviceset="MICC12" device="" value="4.7uH">
-<attribute name="CONRAD" value="440391-62"/>
+<attribute name="REICHELT" value="SMCC 4,70µ"/>
 </part>
 <part name="L2" library="inductors" deviceset="MICC12" device="" value="4.7uH">
-<attribute name="CONRAD" value="440391-62"/>
+<attribute name="REICHELT" value="SMCC 4,70µ"/>
 </part>
-<part name="R6" library="resistor" deviceset="R-EU_" device="0204/7" value="10K"/>
-<part name="R7" library="resistor" deviceset="R-EU_" device="0204/7" value="360R"/>
-<part name="R9" library="resistor" deviceset="R-EU_" device="0204/7" value="47K"/>
-<part name="R10" library="resistor" deviceset="R-EU_" device="0204/7" value="10K"/>
-<part name="R11" library="resistor" deviceset="R-EU_" device="0204/7" value="100K"/>
+<part name="R6" library="resistor" deviceset="R-EU_" device="0204/7" value="10K">
+<attribute name="REICHELT" value="METALL 10,0K"/>
+</part>
+<part name="R7" library="resistor" deviceset="R-EU_" device="0204/7" value="360R">
+<attribute name="REICHELT" value="METALL 360"/>
+</part>
+<part name="R9" library="resistor" deviceset="R-EU_" device="0204/7" value="47K">
+<attribute name="REICHELT" value="METALL 47,0K"/>
+</part>
+<part name="R10" library="resistor" deviceset="R-EU_" device="0204/7" value="10K">
+<attribute name="REICHELT" value="METALL 10,0K"/>
+</part>
+<part name="R11" library="resistor" deviceset="R-EU_" device="0204/7" value="100K">
+<attribute name="REICHELT" value="METALL 100K"/>
+</part>
 <part name="C5" library="resistor" deviceset="C-EU" device="025-050X050" value="68p">
-<attribute name="CONRAD" value="457221-62"/>
+<attribute name="REICHELT" value="KERKO 68P"/>
 </part>
-<part name="R12" library="resistor" deviceset="R-EU_" device="0204/7" value="4K7"/>
-<part name="R13" library="resistor" deviceset="R-EU_" device="0204/7" value="100"/>
-<part name="R8" library="resistor" deviceset="R-EU_" device="0204/7" value="4K7"/>
-<part name="R4" library="resistor" deviceset="R-EU_" device="0204/7" value="470R"/>
-<part name="R5" library="resistor" deviceset="R-EU_" device="0204/7" value="470R"/>
-<part name="C7" library="capacitor-wima" deviceset="C" device="2.5/2" value="1.5n"/>
-<part name="C10" library="capacitor-wima" deviceset="C" device="2.5/2" value="10n"/>
+<part name="R12" library="resistor" deviceset="R-EU_" device="0204/7" value="4K7">
+<attribute name="REICHELT" value="METALL 4,70K"/>
+</part>
+<part name="R13" library="resistor" deviceset="R-EU_" device="0204/7" value="100">
+<attribute name="REICHELT" value="METALL 100"/>
+</part>
+<part name="R8" library="resistor" deviceset="R-EU_" device="0204/7" value="4K7">
+<attribute name="REICHELT" value="METALL 4,70K"/>
+</part>
+<part name="R4" library="resistor" deviceset="R-EU_" device="0204/7" value="470R">
+<attribute name="REICHELT" value="METALL 470"/>
+</part>
+<part name="R5" library="resistor" deviceset="R-EU_" device="0204/7" value="470R">
+<attribute name="REICHELT" value="METALL 470"/>
+</part>
+<part name="C7" library="capacitor-wima" deviceset="C" device="2.5/2" value="1.5n">
+<attribute name="REICHELT" value="X7R-2,5 1,5N"/>
+</part>
+<part name="C10" library="capacitor-wima" deviceset="C" device="2.5/2" value="10n">
+<attribute name="REICHELT" value="X7R-2,5 10N"/>
+</part>
 <part name="C8" library="capacitor-wima" deviceset="C" device="5/11" value="10u">
 <attribute name="CONRAD" value="450662-62"/>
 </part>
 <part name="C9" library="capacitor-wima" deviceset="C" device="2.5/2" value="1n">
-<attribute name="CONRAD" value="453005-62"/>
+<attribute name="REICHELT" value="X7R-2,5 1,0N"/>
 </part>
-<part name="C11" library="capacitor-wima" deviceset="C" device="2.5/2" value="100n"/>
-<part name="T2" library="transistor" deviceset="*-NPN-" device="TO92-EBC" value="BC547B"/>
+<part name="C11" library="capacitor-wima" deviceset="C" device="2.5/2" value="100n">
+<attribute name="REICHELT" value="X7R-2,5 100N"/>
+</part>
+<part name="T2" library="transistor" deviceset="*-NPN-" device="TO92-EBC" value="BC547B">
+<attribute name="REICHELT" value="BC 547B"/>
+</part>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
 <part name="+3V34" library="supply1" deviceset="+3V3" device=""/>
-<part name="IC1" library="linear" deviceset="LM393" device="N"/>
+<part name="IC1" library="linear" deviceset="LM393" device="N">
+<attribute name="REICHELT" value="LM 393 DIP"/>
+</part>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="+3V31" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
@@ -18132,34 +18162,62 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="C1" library="rcl" deviceset="CPOL-EU" device="UD-6,3X8,8" value="220u">
-<attribute name="CONRAD" value="VF 220/6,3 P-D"/>
+<attribute name="REICHELT" value="VF 220/6,3 P-D"/>
 </part>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
-<part name="T1" library="transistor" deviceset="*-NPN-" device="TO92-EBC" value="BC547B"/>
-<part name="C4" library="rcl" deviceset="CPOL-EU" device="UD-10X10" value="820u">
-<attribute name="CONRAD" value="VF 820/16 P-G"/>
+<part name="T1" library="transistor" deviceset="*-NPN-" device="TO92-EBC" value="BC547B">
+<attribute name="REICHELT" value="BC 547B"/>
 </part>
-<part name="R2" library="resistor" deviceset="R-EU_" device="0204/7" value="10K"/>
+<part name="C4" library="rcl" deviceset="CPOL-EU" device="UD-10X10" value="820u">
+<attribute name="REICHELT" value="VF 820/16 P-G"/>
+</part>
+<part name="R2" library="resistor" deviceset="R-EU_" device="0204/7" value="10K">
+<attribute name="REICHELT" value="METALL 10,0K"/>
+</part>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="C6" library="rcl" deviceset="CPOL-EU" device="UD-10X10" value="820u">
-<attribute name="CONRAD" value="VF 820/16 P-G"/>
+<attribute name="REICHELT" value="VF 820/16 P-G"/>
 </part>
-<part name="LED1" library="led" deviceset="LED" device="3MM" value="3mm"/>
+<part name="LED1" library="led" deviceset="LED" device="3MM" value="3mm">
+<attribute name="REICHELT" value="LED 3MM ST RT"/>
+</part>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="R1" library="resistor" deviceset="R-EU_" device="0204/7" value="4k7"/>
-<part name="C2" library="capacitor-wima" deviceset="C" device="2.5/2" value="100p"/>
+<part name="R1" library="resistor" deviceset="R-EU_" device="0204/7" value="4k7">
+<attribute name="REICHELT" value="METALL 4,70K"/>
+</part>
+<part name="C2" library="capacitor-wima" deviceset="C" device="2.5/2" value="100p">
+<attribute name="REICHELT" value="KERKO 100P"/>
+</part>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="MOD1" library="buckconv" deviceset="D24VXFX" device="" value="D24V3F3"/>
+<part name="MOD1" library="buckconv" deviceset="D24VXFX" device="" value="D24V3F3">
+<attribute name="POLOLU" value="D24V3F3"/>
+</part>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
-<part name="ESP1" library="ESP8266-ESP12" deviceset="ESP-12" device="ESP-12"/>
-<part name="UPLD" library="jumper" deviceset="JP1Q" device="" value="Upload"/>
-<part name="EXT.PORT" library="con-lstb" deviceset="MA08-2" device="" value="Ext"/>
-<part name="EMS" library="EagleLibrary_Wuerth_Elektronik_eiCan_Terminal_Blocks_Connectors_v6_20150113" deviceset="691102710002" device="" value="691102710002"/>
-<part name="PROGRAM" library="EagleLibrary_Wuerth_Elektronik_eiCan_Board_to_Board_Connectors_v6_20150113" deviceset="61300611121" device="" value="61300611121"/>
-<part name="SV1" library="con-lstb" deviceset="MA03-2" device="" value="Mode"/>
-<part name="R3" library="resistor" deviceset="R-EU_" device="0204/7" value="4k7"/>
-<part name="C3" library="capacitor-wima" deviceset="C" device="2.5/2" value="1n"/>
+<part name="ESP1" library="ESP8266-ESP12" deviceset="ESP-12" device="ESP-12">
+<attribute name="AI-THINKER" value="ESP-12"/>
+</part>
+<part name="UPLD" library="jumper" deviceset="JP1Q" device="" value="Upload">
+<attribute name="REICHELT" value="MPE 087-1-002"/>
+</part>
+<part name="EXT.PORT" library="con-lstb" deviceset="MA08-2" device="" value="Ext">
+<attribute name="REICHELT" value="MPE 087-2-016"/>
+</part>
+<part name="EMS" library="EagleLibrary_Wuerth_Elektronik_eiCan_Terminal_Blocks_Connectors_v6_20150113" deviceset="691102710002" device="" value="691102710002">
+<attribute name="REICHELT" value="AKL 055-02"/>
+</part>
+<part name="PROGRAM" library="EagleLibrary_Wuerth_Elektronik_eiCan_Board_to_Board_Connectors_v6_20150113" deviceset="61300611121" device="" value="61300611121">
+<attribute name="REICHELT" value="MPE 087-1-006"/>
+</part>
+<part name="SV1" library="con-lstb" deviceset="MA03-2" device="" value="Mode">
+<attribute name="REICHELT" value="MPE 087-2-006"/>
+</part>
+<part name="R3" library="resistor" deviceset="R-EU_" device="0204/7" value="4k7">
+<attribute name="REICHELT" value="METALL 4,70K"/>
+</part>
+<part name="C3" library="capacitor-wima" deviceset="C" device="2.5/2" value="1n">
+<attribute name="REICHELT" value="X7R-2,5 1,0N"/>
+</part>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="SJ1" library="jumper" deviceset="SJ" device="" value="n.u."/>
@@ -18170,59 +18228,88 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 </plain>
 <instances>
 <instance part="D1" gate="G$1" x="-137.16" y="175.26">
-<attribute name="CONRAD" x="-137.16" y="175.26" size="1.778" layer="96" display="off"/>
+<attribute name="REICHELT" x="-137.16" y="175.26" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="D2" gate="G$1" x="-137.16" y="165.1" rot="R180">
-<attribute name="CONRAD" x="-137.16" y="165.1" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="REICHELT" x="-137.16" y="165.1" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="D3" gate="G$1" x="-137.16" y="152.4">
-<attribute name="CONRAD" x="-137.16" y="152.4" size="1.778" layer="96" display="off"/>
+<attribute name="REICHELT" x="-137.16" y="152.4" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="D4" gate="G$1" x="-137.16" y="142.24" rot="R180">
-<attribute name="CONRAD" x="-137.16" y="142.24" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="REICHELT" x="-137.16" y="142.24" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="D5" gate="G$1" x="-127" y="147.32" rot="R90">
-<attribute name="CONRAD" x="-127" y="147.32" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="REICHELT" x="-127" y="147.32" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="D6" gate="G$1" x="-81.28" y="99.06" rot="R270">
-<attribute name="CONRAD" x="-81.28" y="99.06" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="REICHELT" x="-81.28" y="99.06" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
 <instance part="L1" gate="1" x="-154.94" y="175.26">
-<attribute name="CONRAD" x="-154.94" y="175.26" size="1.778" layer="96" display="off"/>
+<attribute name="REICHELT" x="-154.94" y="175.26" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="L2" gate="1" x="-154.94" y="142.24" rot="R180">
-<attribute name="CONRAD" x="-154.94" y="142.24" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="REICHELT" x="-154.94" y="142.24" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
-<instance part="R6" gate="G$1" x="-88.9" y="124.46" rot="MR0"/>
-<instance part="R7" gate="G$1" x="-81.28" y="111.76" rot="R270"/>
-<instance part="R9" gate="G$1" x="-71.12" y="111.76" rot="R270"/>
-<instance part="R10" gate="G$1" x="-66.04" y="111.76" rot="R270"/>
-<instance part="R11" gate="G$1" x="-58.42" y="111.76" rot="R270"/>
+<instance part="R6" gate="G$1" x="-88.9" y="124.46" rot="MR0">
+<attribute name="REICHELT" x="-88.9" y="124.46" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
+<instance part="R7" gate="G$1" x="-81.28" y="111.76" rot="R270">
+<attribute name="REICHELT" x="-81.28" y="111.76" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R9" gate="G$1" x="-71.12" y="111.76" rot="R270">
+<attribute name="REICHELT" x="-71.12" y="111.76" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R10" gate="G$1" x="-66.04" y="111.76" rot="R270">
+<attribute name="REICHELT" x="-66.04" y="111.76" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R11" gate="G$1" x="-58.42" y="111.76" rot="R270">
+<attribute name="REICHELT" x="-58.42" y="111.76" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
 <instance part="C5" gate="G$1" x="-144.78" y="160.02">
-<attribute name="CONRAD" x="-144.78" y="160.02" size="1.778" layer="96" display="off"/>
+<attribute name="REICHELT" x="-144.78" y="160.02" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R12" gate="G$1" x="-40.64" y="129.54" rot="R270"/>
-<instance part="R13" gate="G$1" x="-35.56" y="121.92"/>
-<instance part="R8" gate="G$1" x="-78.74" y="170.18" rot="R270"/>
-<instance part="R4" gate="G$1" x="-96.52" y="170.18" rot="R270"/>
-<instance part="R5" gate="G$1" x="-88.9" y="170.18" rot="R270"/>
-<instance part="C7" gate="G$1" x="-96.52" y="157.48"/>
-<instance part="C10" gate="G$1" x="-53.34" y="149.86"/>
+<instance part="R12" gate="G$1" x="-40.64" y="129.54" rot="R270">
+<attribute name="REICHELT" x="-40.64" y="129.54" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R13" gate="G$1" x="-35.56" y="121.92">
+<attribute name="REICHELT" x="-35.56" y="121.92" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R8" gate="G$1" x="-78.74" y="170.18" rot="R270">
+<attribute name="REICHELT" x="-78.74" y="170.18" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R4" gate="G$1" x="-96.52" y="170.18" rot="R270">
+<attribute name="REICHELT" x="-96.52" y="170.18" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R5" gate="G$1" x="-88.9" y="170.18" rot="R270">
+<attribute name="REICHELT" x="-88.9" y="170.18" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="C7" gate="G$1" x="-96.52" y="157.48">
+<attribute name="REICHELT" x="-96.52" y="157.48" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C10" gate="G$1" x="-53.34" y="149.86">
+<attribute name="REICHELT" x="-53.34" y="149.86" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="C8" gate="G$1" x="-78.74" y="124.46" rot="R90">
 <attribute name="CONRAD" x="-78.74" y="124.46" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="C9" gate="G$1" x="-78.74" y="119.38" rot="R90">
-<attribute name="CONRAD" x="-78.74" y="119.38" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="REICHELT" x="-78.74" y="119.38" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="C11" gate="G$1" x="-20.32" y="152.4" rot="MR180"/>
+<instance part="C11" gate="G$1" x="-20.32" y="152.4" rot="MR180">
+<attribute name="REICHELT" x="-20.32" y="152.4" size="1.778" layer="96" rot="MR180" display="off"/>
+</instance>
 <instance part="T2" gate="G$1" x="-86.36" y="157.48" smashed="yes" rot="MR0">
 <attribute name="NAME" x="-82.296" y="157.988" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="-78.74" y="152.4" size="1.778" layer="96" rot="MR0"/>
+<attribute name="REICHELT" x="-86.36" y="157.48" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
 <instance part="GND16" gate="1" x="-20.32" y="144.78" rot="MR0"/>
 <instance part="+3V34" gate="G$1" x="-20.32" y="170.18" rot="MR0"/>
 <instance part="IC1" gate="A" x="-50.8" y="121.92"/>
-<instance part="IC1" gate="B" x="-63.5" y="157.48" rot="R180"/>
+<instance part="IC1" gate="B" x="-63.5" y="157.48" rot="R180">
+<attribute name="REICHELT" x="-63.5" y="157.48" size="1.778" layer="96" rot="R180" display="off"/>
+</instance>
 <instance part="IC1" gate="P" x="-25.4" y="157.48" rot="MR0"/>
 <instance part="GND14" gate="1" x="-86.36" y="15.24" rot="MR0"/>
 <instance part="+3V31" gate="G$1" x="-162.56" y="73.66" rot="MR0"/>
@@ -18236,37 +18323,64 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <instance part="GND10" gate="1" x="-88.9" y="149.86"/>
 <instance part="GND11" gate="1" x="-81.28" y="91.44"/>
 <instance part="C1" gate="G$1" x="-170.18" y="25.4" rot="MR0">
-<attribute name="CONRAD" x="-170.18" y="25.4" size="1.778" layer="96" rot="MR0" display="off"/>
+<attribute name="REICHELT" x="-170.18" y="25.4" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
 <instance part="GND1" gate="1" x="-170.18" y="15.24" rot="MR0"/>
-<instance part="T1" gate="G$1" x="-154.94" y="106.68" rot="R90"/>
-<instance part="C4" gate="G$1" x="-147.32" y="91.44">
-<attribute name="CONRAD" x="-147.32" y="91.44" size="1.778" layer="96" display="off"/>
+<instance part="T1" gate="G$1" x="-154.94" y="106.68" rot="R90">
+<attribute name="REICHELT" x="-154.94" y="106.68" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="R2" gate="G$1" x="-154.94" y="91.44" rot="R270"/>
+<instance part="C4" gate="G$1" x="-147.32" y="91.44">
+<attribute name="REICHELT" x="-147.32" y="91.44" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R2" gate="G$1" x="-154.94" y="91.44" rot="R270">
+<attribute name="REICHELT" x="-154.94" y="91.44" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
 <instance part="GND3" gate="1" x="-154.94" y="83.82"/>
 <instance part="GND5" gate="1" x="-147.32" y="83.82"/>
 <instance part="C6" gate="G$1" x="-139.7" y="91.44">
-<attribute name="CONRAD" x="-139.7" y="91.44" size="1.778" layer="96" display="off"/>
+<attribute name="REICHELT" x="-139.7" y="91.44" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="LED1" gate="G$1" x="-167.64" y="106.68" rot="MR0"/>
+<instance part="LED1" gate="G$1" x="-167.64" y="106.68" rot="MR0">
+<attribute name="REICHELT" x="-167.64" y="106.68" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
 <instance part="GND6" gate="1" x="-139.7" y="83.82"/>
-<instance part="R1" gate="G$1" x="-162.56" y="58.42" rot="R90"/>
-<instance part="C2" gate="G$1" x="-162.56" y="25.4" rot="MR0"/>
+<instance part="R1" gate="G$1" x="-162.56" y="58.42" rot="R90">
+<attribute name="REICHELT" x="-162.56" y="58.42" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
+<instance part="C2" gate="G$1" x="-162.56" y="25.4" rot="MR0">
+<attribute name="REICHELT" x="-162.56" y="25.4" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
 <instance part="GND2" gate="1" x="-162.56" y="15.24" rot="MR0"/>
-<instance part="MOD1" gate="G$1" x="-129.54" y="88.9"/>
+<instance part="MOD1" gate="G$1" x="-129.54" y="88.9">
+<attribute name="POLOLU" x="-129.54" y="88.9" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND8" gate="1" x="-116.84" y="83.82"/>
-<instance part="ESP1" gate="G$1" x="-132.08" y="60.96" rot="MR180"/>
-<instance part="UPLD" gate="A" x="5.08" y="78.74" rot="MR0"/>
-<instance part="EXT.PORT" gate="G$1" x="-50.8" y="43.18"/>
+<instance part="ESP1" gate="G$1" x="-132.08" y="60.96" rot="MR180">
+<attribute name="AI-THINKER" x="-132.08" y="60.96" size="1.778" layer="96" rot="MR180" display="off"/>
+</instance>
+<instance part="UPLD" gate="A" x="5.08" y="78.74" rot="MR0">
+<attribute name="REICHELT" x="5.08" y="78.74" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
+<instance part="EXT.PORT" gate="G$1" x="-50.8" y="43.18">
+<attribute name="REICHELT" x="-50.8" y="43.18" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="EMS" gate="G$1" x="-172.72" y="172.72" smashed="yes" rot="R180">
 <attribute name="NAME" x="-173.99" y="172.482" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-173.99" y="175.26" size="1.778" layer="96" rot="R180"/>
+<attribute name="REICHELT" x="-172.72" y="172.72" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
-<instance part="PROGRAM" gate="G$1" x="43.18" y="48.26"/>
-<instance part="SV1" gate="1" x="17.78" y="38.1" rot="R270"/>
-<instance part="R3" gate="G$1" x="-154.94" y="58.42" rot="R90"/>
-<instance part="C3" gate="G$1" x="-154.94" y="22.86" rot="MR0"/>
+<instance part="PROGRAM" gate="G$1" x="43.18" y="48.26">
+<attribute name="REICHELT" x="43.18" y="48.26" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="SV1" gate="1" x="17.78" y="38.1" rot="R270">
+<attribute name="REICHELT" x="17.78" y="38.1" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R3" gate="G$1" x="-154.94" y="58.42" rot="R90">
+<attribute name="REICHELT" x="-154.94" y="58.42" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
+<instance part="C3" gate="G$1" x="-154.94" y="22.86" rot="MR0">
+<attribute name="REICHELT" x="-154.94" y="22.86" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
 <instance part="GND4" gate="1" x="-154.94" y="15.24" rot="MR0"/>
 <instance part="GND15" gate="1" x="5.08" y="68.58" rot="MR0"/>
 <instance part="SJ1" gate="1" x="-134.62" y="104.14" rot="R90"/>

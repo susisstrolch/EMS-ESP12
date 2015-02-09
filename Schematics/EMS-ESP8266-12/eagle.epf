@@ -364,12 +364,18 @@ UsedLibrary="/home/jorschiedt/eagle/libraries/WE/Wuerth_Elektronik_LEDs_V6.lbr"
 UsedLibrary="/home/jorschiedt/eagle/libraries/WE/Wurth_Electronics_Midcom_Speedy_and_standard_magnetics.lbr"
 
 [Win_1]
+Type="Control Panel"
+Loc="278 22 1386 796"
+State=0
+Number=0
+
+[Win_2]
 Type="Schematic Editor"
-Loc="203 103 2067 1486"
-State=2
+Loc="0 117 2270 1476"
+State=0
 Number=1
 File="EMS-ESP8266-12.sch"
-View="-184.797 8.59576 59.4966 191.198"
+View="-235.926 8.79937 57.2265 227.922"
 WireWidths=" 0 0.3048 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.4064 0.1524"
 PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
 PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
@@ -408,16 +414,16 @@ ArcDirection=0
 AddLevel=2
 PadsSameType=0
 Layer=91
-Views=" 1: -184.797 8.59576 59.4966 191.198"
+Views=" 1: -235.926 8.79937 57.2265 227.922"
 Sheet="1"
 
-[Win_2]
+[Win_3]
 Type="Board Editor"
-Loc="509 10 2625 1436"
+Loc="248 20 1501 850"
 State=2
 Number=2
 File="EMS-ESP8266-12.brd"
-View="-8.15269 -9.68757 89.7029 57.6299"
+View="0.835309 8.68387 57.4647 47.6407"
 WireWidths=" 0 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0.4064 0.254 0.508"
 PadDiameters=" 0.254 0.3048 0.4064 0.6096 0.8128 1.016 1.27 1.4224 1.6764 1.778 1.9304 2.1844 2.54 3.81 6.4516 0"
 PadDrills=" 0.5 0.6 0.7 0.9 1 1.1 1.2 1.3 1.4 1.5 1.6 2 2.2 2.8 3.2 0.8"
@@ -456,12 +462,6 @@ ArcDirection=0
 AddLevel=2
 PadsSameType=0
 Layer=1
-
-[Win_3]
-Type="Control Panel"
-Loc="0 0 759 664"
-State=2
-Number=0
 
 [Desktop]
 Screen="2880 1620"

@@ -14,6 +14,10 @@
 #define EMS_UART_INT_MASK (UART_BRK_DET_INT_ENA | UART_FRM_ERR_INT_ENA | UART_RXFIFO_FULL_INT_ENA | UART_RXFIFO_OVF_INT_ENA)
 #define EMS_UART UART0
 
+/* port definitions */
+#define EMS_CTRL_PORT	2701		// telnet port - setup and monitoring
+#define EMS_GW_PORT		7950		// EMS gateway for connectord
+
 /* EMS UART transfer status */
 typedef enum {
 	EMS_RX_IDLE,
@@ -33,19 +37,19 @@ typedef struct {
     uint16	uart_int_st;	// UART status
     uint32	rtc_time;		// RTC time in us
     uint16	uart_fifo_len;	// UART FIFO count
-} _EMS_DebugHeader;
+} __attribute__ ((__packed__))  _EMS_DebugHeader;
 
 // EMS UART Status
 typedef struct {
 	uint64_t	millis;		// event occurance
 	uint16_t	fifolen;	// Rx FIFO size at INTR time
-} _EMS_UART_INT_STATUS;
+}  _EMS_UART_INT_STATUS;
 
 // EMS device
 typedef struct {
-	int id:7;					// EMS device ID
-	int immediate:1;			// request immediate response
-} _EMS_Device;
+	unsigned int id:7;					// EMS device ID
+	unsigned int immediate:1;			// request immediate response
+} __attribute__ ((__packed__)) _EMS_Device;
 
 // EMS telegram
 typedef struct {
@@ -55,17 +59,19 @@ typedef struct {
 	uint8_t type;				// telegram type
 	uint8_t offset;				// telegram data offset
 	uint8_t data[64];			// telegram data
-} _EMS_Telegram;
+} __attribute__ ((__packed__)) _EMS_Telegram;
 
 // EMS buffer
 typedef struct {
-	_EMS_Telegram *emsTelegram;	
+	_EMS_Telegram *emsTelegram;
     uint8_t	emsCrc;			// rx buffer CRC
     uint8_t uartError;
 } _EMS_Buffer;
 
 // status/counters since last power on
 typedef struct {
+   	_EMS_RX_STATUS emsRxStatus:8;
+	_EMS_TX_STATUS emsTxStatus:8;
 	int		emsRxPgks;		// received since pwron
 	int		emsTxPkgs;		// sent since pwron
     int		emsRxGood;		// good Rx packages - neither EMS nor UART error
@@ -75,9 +81,8 @@ typedef struct {
     int		emxCrcErr;		// EMS status: CRC error
     uint64_t	emsLastRx;		// timestamp last receive pckg
     uint64_t	emsLastTx;		// timestamp last transmit pckg
-   	_EMS_RX_STATUS emsRxStatus:4;
-	_EMS_TX_STATUS emsTxStatus:4;
 } _EMS_Sys_Status;			// overall error and rx/tx status
+
 
 #ifndef __EMS_C
 extern uint64_t EMS_millis;		// millisec since start

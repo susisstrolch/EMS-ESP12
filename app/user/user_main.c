@@ -34,7 +34,7 @@
 
 extern void ems_init();
 
-RcvMsgBuff *emsRxBuf;
+
 flash_param_t *flash_param;
 
 os_event_t		recvTaskQueue[recvTaskQueueLen];
@@ -183,9 +183,6 @@ void user_init(void)
 
 		wifi_set_sleep_type(LIGHT_SLEEP_T);
 		
-		emsRxBuf = allocateRcvMsgBuff();
-		uart_init(BIT_RATE_9600, BIT_RATE_115200);
-		
-//		ems_init();
+		ems_init();
 		serverInit(flash_param->port);
 }

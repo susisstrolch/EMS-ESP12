@@ -11,13 +11,14 @@
 
 #include "ems.h"
 
-static uint64_t EMS_millis;				// millisec since start
-static os_timer_t EMSTimer;				// system timer
+uint64_t EMS_millis;				// millisec since start
+os_timer_t EMSTimer;				// system timer
 
-static os_event_t *emsRxTaskQueue;
-static os_event_t *emsTxTaskQueue;
+os_event_t *emsRxTaskQueue;
+os_event_t *emsTxTaskQueue;
 
-static _EMS_Sys_Status EMS_Sys_Status;		// EMS status
+RcvMsgBuff *emsRxBuf;
+_EMS_Sys_Status EMS_Sys_Status;		// EMS status
 
 /* *****************************************************
  * EMS 1ms timer
@@ -29,7 +30,7 @@ static void EMSTimerFunc(void *arg) {
 /* *****************************************************
  * initialize EMS subsystem
  * *****************************************************/
-static void ICACHE_FLASH_ATTR
+void ICACHE_FLASH_ATTR
 ems_init(void) {
 	EMS_Sys_Status.emsRxPgks = 0;
 	EMS_Sys_Status.emsTxPkgs = 0;
@@ -58,5 +59,7 @@ ems_init(void) {
 	system_os_task(emsTxTask, emsTxTaskPrio, emsTxTaskQueue, emsTaskQueueLen);
 
     /* initialize the UART */
+	emsRxBuf = allocateRcvMsgBuff();
+	uart_init(BIT_RATE_9600, BIT_RATE_115200);
     
 }
