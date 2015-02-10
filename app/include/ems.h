@@ -14,6 +14,7 @@
 #define EMS_UART_INT_MASK (UART_BRK_DET_INT_ENA | UART_FRM_ERR_INT_ENA | UART_RXFIFO_FULL_INT_ENA | UART_RXFIFO_OVF_INT_ENA)
 #define EMS_UART UART0
 
+#define OUR_EMS_ADDRESS 0x0b		// our EMS module address
 /* port definitions */
 #define EMS_CTRL_PORT	2701		// telnet port - setup and monitoring
 #define EMS_GW_PORT		7950		// EMS gateway for connectord
@@ -60,6 +61,12 @@ typedef struct {
 	uint8_t offset;				// telegram data offset
 	uint8_t data[64];			// telegram data
 } __attribute__ ((__packed__)) _EMS_Telegram;
+
+// EMS poll request/response
+typedef struct {
+    uint8_t	size;
+	_EMS_Device target;			// target for poll request
+} _EMS_Poll;
 
 // EMS buffer
 typedef struct {
