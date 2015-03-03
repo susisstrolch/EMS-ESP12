@@ -18071,15 +18071,19 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 </classes>
 <parts>
 <part name="D1" library="diode" deviceset="SCHOTTKY-DIODE" device="DO35-7" value="BAT46">
+<attribute name="ALTERNATIV" value="1/2 BAT54S"/>
 <attribute name="REICHELT" value="BAT 46"/>
 </part>
 <part name="D2" library="diode" deviceset="SCHOTTKY-DIODE" device="DO35-7" value="BAT46">
+<attribute name="ALTERNATIV" value="1/2 BAT54S"/>
 <attribute name="REICHELT" value="BAT 46"/>
 </part>
 <part name="D3" library="diode" deviceset="SCHOTTKY-DIODE" device="DO35-7" value="BAT46">
+<attribute name="ALTERNATIV" value="1/2 BAT54S"/>
 <attribute name="REICHELT" value="BAT 46"/>
 </part>
 <part name="D4" library="diode" deviceset="SCHOTTKY-DIODE" device="DO35-7" value="BAT46">
+<attribute name="ALTERNATIV" value="1/2 BAT54S"/>
 <attribute name="REICHELT" value="BAT 46"/>
 </part>
 <part name="D5" library="diode" deviceset="SCHOTTKY-DIODE" device="DO35-7" value="BAT46">
@@ -18134,7 +18138,9 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <attribute name="REICHELT" value="X7R-2,5 10N"/>
 </part>
 <part name="C8" library="capacitor-wima" deviceset="C" device="5/11" value="10u">
+<attribute name="ALTERNATIV" value="SMD 10uF Keramik"/>
 <attribute name="CONRAD" value="450662-62"/>
+<attribute name="REICHELT" value="X7R-G1206 10/16"/>
 </part>
 <part name="C9" library="capacitor-wima" deviceset="C" device="2.5/2" value="1n">
 <attribute name="REICHELT" value="X7R-2,5 1,0N"/>
@@ -18229,15 +18235,19 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <instances>
 <instance part="D1" gate="G$1" x="-137.16" y="175.26">
 <attribute name="REICHELT" x="-137.16" y="175.26" size="1.778" layer="96" display="off"/>
+<attribute name="ALTERNATIV" x="-137.16" y="175.26" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="D2" gate="G$1" x="-137.16" y="165.1" rot="R180">
 <attribute name="REICHELT" x="-137.16" y="165.1" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="ALTERNATIV" x="-137.16" y="165.1" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="D3" gate="G$1" x="-137.16" y="152.4">
 <attribute name="REICHELT" x="-137.16" y="152.4" size="1.778" layer="96" display="off"/>
+<attribute name="ALTERNATIV" x="-137.16" y="152.4" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="D4" gate="G$1" x="-137.16" y="142.24" rot="R180">
 <attribute name="REICHELT" x="-137.16" y="142.24" size="1.778" layer="96" rot="R180" display="off"/>
+<attribute name="ALTERNATIV" x="-137.16" y="142.24" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="D5" gate="G$1" x="-127" y="147.32" rot="R90">
 <attribute name="REICHELT" x="-127" y="147.32" size="1.778" layer="96" rot="R90" display="off"/>
@@ -18292,6 +18302,8 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 </instance>
 <instance part="C8" gate="G$1" x="-78.74" y="124.46" rot="R90">
 <attribute name="CONRAD" x="-78.74" y="124.46" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="ALTERNATIV" x="-78.74" y="124.46" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="REICHELT" x="-78.74" y="124.46" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="C9" gate="G$1" x="-78.74" y="119.38" rot="R90">
 <attribute name="REICHELT" x="-78.74" y="119.38" size="1.778" layer="96" rot="R90" display="off"/>

@@ -18197,13 +18197,21 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <part name="ESP1" library="ESP8266-ESP12" deviceset="ESP-12" device="ESP-12">
 <attribute name="AI-THINKER" value="ESP-12"/>
 </part>
-<part name="UPLD" library="jumper" deviceset="JP1Q" device="" value="Upload"/>
-<part name="EXT.PORT" library="con-lstb" deviceset="MA08-2" device="" value="Ext"/>
+<part name="UPLD" library="jumper" deviceset="JP1Q" device="" value="Upload">
+<attribute name="REICHELT" value="MPE 087-1-002"/>
+</part>
+<part name="EXT.PORT" library="con-lstb" deviceset="MA08-2" device="" value="Ext">
+<attribute name="REICHELT" value="MPE 087-2-016"/>
+</part>
 <part name="EMS" library="EagleLibrary_Wuerth_Elektronik_eiCan_Terminal_Blocks_Connectors_v6_20150113" deviceset="691102710002" device="" value="691102710002">
 <attribute name="REICHELT" value="AKL 055-02"/>
 </part>
-<part name="PROGRAM" library="EagleLibrary_Wuerth_Elektronik_eiCan_Board_to_Board_Connectors_v6_20150113" deviceset="61300611121" device="" value="61300611121"/>
-<part name="SV1" library="con-lstb" deviceset="MA03-2" device="" value="Mode"/>
+<part name="PROGRAM" library="EagleLibrary_Wuerth_Elektronik_eiCan_Board_to_Board_Connectors_v6_20150113" deviceset="61300611121" device="" value="61300611121">
+<attribute name="REICHELT" value="MPE 087-1-006"/>
+</part>
+<part name="SV1" library="con-lstb" deviceset="MA03-2" device="" value="Mode">
+<attribute name="REICHELT" value="MPE 087-2-006"/>
+</part>
 <part name="R3" library="resistor" deviceset="R-EU_" device="0204/7" value="4k7">
 <attribute name="REICHELT" value="METALL 4,70K"/>
 </part>
@@ -18350,15 +18358,23 @@ Created 2014-05-29, Karrer Zheng&lt;br&gt;
 <instance part="ESP1" gate="G$1" x="-132.08" y="60.96" rot="MR180">
 <attribute name="AI-THINKER" x="-132.08" y="60.96" size="1.778" layer="96" rot="MR180" display="off"/>
 </instance>
-<instance part="UPLD" gate="A" x="5.08" y="78.74" rot="MR0"/>
-<instance part="EXT.PORT" gate="G$1" x="-50.8" y="43.18"/>
+<instance part="UPLD" gate="A" x="5.08" y="78.74" rot="MR0">
+<attribute name="REICHELT" x="5.08" y="78.74" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
+<instance part="EXT.PORT" gate="G$1" x="-50.8" y="43.18">
+<attribute name="REICHELT" x="-50.8" y="43.18" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="EMS" gate="G$1" x="-172.72" y="172.72" smashed="yes" rot="R180">
 <attribute name="NAME" x="-173.99" y="172.482" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-173.99" y="175.26" size="1.778" layer="96" rot="R180"/>
 <attribute name="REICHELT" x="-172.72" y="172.72" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
-<instance part="PROGRAM" gate="G$1" x="43.18" y="48.26"/>
-<instance part="SV1" gate="1" x="17.78" y="38.1" rot="R270"/>
+<instance part="PROGRAM" gate="G$1" x="43.18" y="48.26">
+<attribute name="REICHELT" x="43.18" y="48.26" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="SV1" gate="1" x="17.78" y="38.1" rot="R270">
+<attribute name="REICHELT" x="17.78" y="38.1" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
 <instance part="R3" gate="G$1" x="-154.94" y="58.42" rot="R90">
 <attribute name="REICHELT" x="-154.94" y="58.42" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>

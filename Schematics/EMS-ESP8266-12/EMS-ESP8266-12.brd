@@ -2278,6 +2278,8 @@ Copyright: WÃÂÃÂÃÂÃÂ¼rth Elektronik</description>
 <attribute name="CONRAD" value="450662-62" x="33.02" y="34.29" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="32.258" y="35.616" size="0.8128" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="32.131" y="34.925" size="1.27" layer="27" ratio="10" rot="R90"/>
+<attribute name="ALTERNATIV" value="SMD 10uF Keramik" x="33.02" y="34.29" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="REICHELT" value="X7R-G1206 10/16" x="33.02" y="34.29" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="C5" library="resistor" package="C025-050X050" value="68p" x="15.24" y="7.62" smashed="yes" rot="R90">
 <attribute name="REICHELT" value="KERKO 68P" x="15.24" y="7.62" size="1.778" layer="27" rot="R90" display="off"/>
@@ -2303,21 +2305,25 @@ Copyright: WÃÂÃÂÃÂÃÂ¼rth Elektronik</description>
 <attribute name="NAME" x="13.335" y="15.494" size="0.8128" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="7.874" y="12.573" size="1.27" layer="27" ratio="10"/>
 <attribute name="REICHELT" value="BAT 46" x="10.16" y="15.24" size="1.778" layer="27" display="off"/>
+<attribute name="ALTERNATIV" value="1/2 BAT54S" x="10.16" y="15.24" size="1.778" layer="27" display="off"/>
 </element>
 <element name="D2" library="diode" package="DO35-7" value="BAT46" x="10.16" y="12.7" smashed="yes">
 <attribute name="NAME" x="13.335" y="12.954" size="0.8128" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="7.874" y="10.033" size="1.27" layer="27" ratio="10"/>
 <attribute name="REICHELT" value="BAT 46" x="10.16" y="12.7" size="1.778" layer="27" display="off"/>
+<attribute name="ALTERNATIV" value="1/2 BAT54S" x="10.16" y="12.7" size="1.778" layer="27" display="off"/>
 </element>
 <element name="D3" library="diode" package="DO35-7" value="BAT46" x="10.16" y="17.78" smashed="yes">
 <attribute name="NAME" x="13.335" y="18.034" size="0.8128" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="7.874" y="15.113" size="1.27" layer="27" ratio="10"/>
 <attribute name="REICHELT" value="BAT 46" x="10.16" y="17.78" size="1.778" layer="27" display="off"/>
+<attribute name="ALTERNATIV" value="1/2 BAT54S" x="10.16" y="17.78" size="1.778" layer="27" display="off"/>
 </element>
 <element name="D4" library="diode" package="DO35-7" value="BAT46" x="10.16" y="22.86" smashed="yes">
 <attribute name="NAME" x="13.335" y="23.114" size="0.8128" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="7.874" y="20.193" size="1.27" layer="27" ratio="10"/>
 <attribute name="REICHELT" value="BAT 46" x="10.16" y="22.86" size="1.778" layer="27" display="off"/>
+<attribute name="ALTERNATIV" value="1/2 BAT54S" x="10.16" y="22.86" size="1.778" layer="27" display="off"/>
 </element>
 <element name="D5" library="diode" package="DO35-7" value="BAT46" x="10.16" y="20.32" smashed="yes">
 <attribute name="NAME" x="13.335" y="20.574" size="0.8128" layer="25" ratio="10" rot="R90"/>
