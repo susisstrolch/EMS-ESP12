@@ -4,6 +4,10 @@
 #include "debug.h"
 #include "time.h"
 
+os_timer_t NTP_Sys_Timer;
+
+unsigned long ntp_time;
+
 void ntp_send_request();
 
 #define NTP_PACKET_SIZE 48 // NTP time stamp is in the first 48 bytes of the message
@@ -72,4 +76,66 @@ void ntp_send_request()
   espconn_regist_recvcb(pCon, ntp_udpclient_recv);
   espconn_regist_sentcb(pCon, ntp_udpclient_sent_cb);
   espconn_sent(pCon, packetBuffer, NTP_PACKET_SIZE);
+}
+
+// 1ms timer for time keeping
+static void NTPTimerFunc(void *arg) {
+	NTP_millis++;
+	if (NTP_millis == 0L)
+		NTP_seconds++;
+}
+
+// config timer
+//    reschedule 5s until ntpsrv is available
+//		schedule ntp query on regular interval (3600s)
+static void NTPConfigFunc(void *arg) {
+	char *ntpsrv;
+	
+	os_timer_disarm(&NTP_Conf_Timer);			// disarm first...
+	ntpsrv = env_get("NTPSRV");					// fetch NTP server address from environment
+	if (UTILS_IsIPV4(ntpsrv)) {
+		strToIP(ntpsrv, &ntp_server);
+		
+		// setup connection parameters
+		pCon = (struct espconn *)os_zalloc(sizeof(struct espconn));
+		pCon->type = ESPCONN_UDP;
+		pCon->state = ESPCONN_NONE;
+		pCon->proto.udp = (esp_udp *)os_zalloc(sizeof(esp_udp));
+		pCon->proto.udp->local_port = espconn_port();
+		pCon->proto.udp->remote_port = 123;
+
+		// request time from ntp server
+		ntp_send_request();	
+		
+		// activate ntp update ticker
+		os_timer_setfn(&NTP_Conf_Timer, (os_timer_func_t *)NTPUpdateFunc, NULL);
+		os_timer_arm(&NTP_Conf_Timer, 3600 * 1000, 1);		// 1hr, repeating		
+				
+	} else {
+		// wait until ntpsrv shows up
+		os_timer_setfn(&NTP_Conf_Timer, (os_timer_func_t *)NTPConfigFunc, NULL);
+		os_timer_arm(&NTP_Conf_Timer, 5 * 1000, 0);		// 5s, non-repeating		
+	}	
+}
+
+// update timerticks from NTP server
+static void NTPUpdateFunc(void *arg) {
+		ntp_send_request();	
+}
+
+void ICACHE_FLASH_ATTR
+ntp_init(void)
+
+{
+    NTP_millis = system_get_time() / 1000;		// preset counter
+
+	// arm the 1ms NTP-Ticker
+	os_timer_disarm(&NTP_Sys_Timer);			// disarm first...
+    os_timer_setfn(&NTP_Sys_Timer, (os_timer_func_t *)NTPTimerFunc, NULL);    
+    os_timer_arm(&NTP_Sys_Timer, 1, 1);			// 1ms, repeating
+    
+    // preset NTP configuration ticker
+	os_timer_disarm(&NTP_Conf_Timer);			// disarm first...
+    os_timer_setfn(&NTP_Conf_Timer, (os_timer_func_t *)NTPConfigFunc, NULL);
+    os_timer_arm(&NTP_Conf_Timer, 5 * 1000, 0);		// 5s, non-repeating
 }
