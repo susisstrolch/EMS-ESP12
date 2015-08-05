@@ -1,7 +1,9 @@
-# EMS-ESP12
+# EMS-ESP8266/12
 EMS Gateway with ESP8266/ESP-12 module
 
 Wireless "Buderus EMS-Bus" interface for "collectord".
+
+For Eagle schematics see https://github.com/susisstrolch/EMS-ESP8266_12-PCB
 
 code parts based/derived from
 - Espressif ESP8266 SDK (ESP_IOS_SDK V0.95 - 15.01.2015)
